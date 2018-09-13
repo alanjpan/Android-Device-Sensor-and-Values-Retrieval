@@ -1,0 +1,19 @@
+public class MainActivity extends Activity {
+sensormanager = (SensorManager)getSystemService(SENSOR_SERVICE);
+
+sensorlist = {"SENSOR"} 
+sensorlist.add(sensormanager.getSensorList(Sensor.TYPE_ALL));
+
+sensordata = {"VALUE"}
+for (Sensor i in sensorlist) {
+sensordata.add(Integer.toString(//retrieve values from sensor list
+} 
+
+output = ""
+j = 0
+for (Sensor i in sensorlist){
+j += 1;
+output = output + "\n" + i + ":\t" + //sensordata[j]
+} 
+
+} 
