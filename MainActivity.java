@@ -4,7 +4,8 @@
 //Program to retrieve all available sensors and all its measurement values from Android devices.
 //
 //Suggested citation as computer software for reference:
-//Pan, Alan J. (2018). Android Device Sensor and Values Retrieval [Computer software]. Github repository <https://github.com/alanjpan/Android-Device-Sensor-and-Values-Retrieval>
+//Pan, Alan J. (2018). Android Device Sensor and Values Retrieval [Computer software]. 
+//      Github repository <https://github.com/alanjpan/Android-Device-Sensor-and-Values-Retrieval>
 //
 //Note this software's license is GNU GPLv3.
     
