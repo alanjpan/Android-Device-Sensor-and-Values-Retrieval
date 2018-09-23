@@ -1,7 +1,7 @@
 //@author: Alan Jerry Pan, CPA, CSc
 //@affiliation: Shanghai Jiaotong University
 //
-//Program to retrieve all sensor names and all values from Android device.
+//Program to retrieve all available sensors and all its measurement values from Android devices.
 //
 //Suggested citation as computer software for reference:
 //Pan, Alan J. (2018). Android Device Sensor and Values Retrieval [Computer software]. Github repository <https://github.com/alanjpan/Android-Device-Sensor-and-Values-Retrieval>
