@@ -9,6 +9,7 @@
 //
 //Note this software's license is GNU GPLv3.
     
+
 package alanpan.myapplication;
 
 import android.app.Activity;
@@ -19,6 +20,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -40,18 +42,21 @@ public class MainActivity extends Activity {
     public StringBuilder output = new StringBuilder();
 
 
-
     public SensorEventListener listener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent e) {
             float[] value = e.values;
 
-            output.append("\n\n" + sensorList.get(index).getStringType() + "\n" + sensorList.get(index).getName() + ":  ");
+            output.append("\n" + sensorList.get(index).getStringType().substring(15).toUpperCase() + "\n");
+            output.append(sensorList.get(index).getName() + "\n");
+
             for (float v : value) {
                 output.append(v + ", ");
             }
             sensormanager.unregisterListener(listener);
+            output.delete(output.length()-2, output.length()-1);
 
+            output.append("\n+-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-+\n");
             text.setText(output);
 
             if (index <= maxindex) {
@@ -76,11 +81,20 @@ public class MainActivity extends Activity {
         text.setMovementMethod(new ScrollingMovementMethod());
 
         initializeSensors();
+
+        button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                text.setText("");
+                index = 0;
+                output.delete(0, output.length());
+                initializeSensors();
+            }
+        });
     }
 
     public void initializeSensors() {
-        output.append("LIST OF SENSORS AND VALUES");
-
         sensormanager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorList = sensormanager.getSensorList(Sensor.TYPE_ALL);
         maxindex = sensorList.size();
