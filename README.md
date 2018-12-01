@@ -1,7 +1,7 @@
 # Android-Device-Sensor-and-Values-Retrieval
 retrieves all sensors and all its values on Android devices
 
-@author: Alan Jerry Pan, CPA, CSc
+@author: Alan Jerry Pan, CPA, CSc student
 @affiliation: Shanghai Jiaotong University
 
 Program to retrieve all available sensors and all its measurement values from Android devices.
